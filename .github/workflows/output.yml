@@ -1,4 +1,4 @@
-name: Output Project
+name: Output Event Details on "Issues" Project
 on: workflow_dispatch
 jobs:
   output:
@@ -6,3 +6,5 @@ jobs:
     steps:
       - name: Output Message
         run: echo "${{ toJson(github) }}"
+      - name: Issues Message
+        run: echo "${{ toJson(github.event.issue) }}"
